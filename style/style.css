@@ -1,0 +1,182 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%); /* https://cssgradient.io/swatches/ */
+}
+
+/* Estilo del menú*/
+nav{
+    position: relative; /* Desplaza el elemento en base a su posición original */
+    top: 25px;
+}
+
+nav ul{
+    display: flex;
+    position: absolute; /*Se posiciona en base al elemento más cercano que lo contiene, en este caso es nav, el elemento contenedor diempre debe estar posicionado */
+    /* Recordar: si alguno de los elementos que lo contiene no están posicionados, se posiciona con respecto al body */
+    top: 10%; /* Empieza al 10% de la parte superior */
+    left: 20%; /* Empieza al 20% de la parte superior */
+    transform: translate(-50%, -30%);
+    display: flex;
+}
+
+li{
+    list-style: none;
+    margin-left: 10%;
+}
+
+a {
+    position: relative; /* Desplaza el elemento en base a su posición original */
+    display: block;
+    margin: 20px 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #262626;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    transition: .5s;
+}
+
+a::before{
+    content: '';
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: scaleY(2);
+    opacity: 0;
+    transition: .3s;
+}
+
+a::after{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #515ada;
+    transform: scale(0);
+    opacity: 0;
+    transition: .3s;
+    z-index: -1;
+}
+
+a:hover{
+    color: white;
+}
+
+a:hover::before{
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+a:hover::after{
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+/* Fin estilo menú */
+
+.contenidoPrincipal{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-areas:
+                        "inicio inicio"
+}
+
+.sectionUno{
+    display: flex;
+    grid-area: inicio;
+    justify-content: space-around;
+    align-items: center;
+    background: rgb(129, 179, 248);
+    padding-bottom: 5%;
+
+}
+
+.sectionUno h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em; 
+}
+
+.astro {
+    width: 35%;
+    animation: astronauta 3s infinite;
+    animation-delay: 5s;
+}
+
+@keyframes astronauta {
+    /* Puntos de inflexión */
+    0%{
+        transform: translateY(50px);
+    }
+
+    30%{
+        transform: translateY(0) rotate(10deg);
+    }
+
+    50%{
+        transform: translateY(-20deg);
+    }
+
+    75%{
+        transform: translateY(5deg);
+    }
+
+    100%{
+        transform: translateY(-50px);
+    }
+}
+
+/* Estilos imágenes */
+.galeria{
+    width: 98.5%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: 250px;
+    grid-gap: 2px;
+    margin: 10px;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*.galeriaItem:nth-child(2){
+    grid-column-start: span 3;
+}*/
+
+.galeriaItem:hover {
+    scale: 1.2;
+    transition: 1.3s;
+}
+
+/*Fin estilo galería */
+
+.text{
+    margin: 10%;
+    border: 3px solid #515ada;
+    padding: 10%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.6)
+}
+
+.text h2{
+    font-family: 'Roboto', sans-serif;
+}
+
+.text p{
+    font-family: 'Roboto', sans-serif;
+}

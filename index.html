@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaciones y transiciones</title>
+
+    <!--Estilo-->
+    <link rel="stylesheet" href="style/style.css">
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap" rel="stylesheet">
+    
+    <!--Animate css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>menu</li>
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Galería</a></li>
+                <li><a href="">Información</a></li>
+            </ul>   
+        </nav>
+    </header>
+
+    <main>
+
+        <article class="contenidoPrincipal">
+            <section class="sectionUno">
+                <h1 class="animate__animated animate__heartBeat">ANIMACIONES Y TRANSICIONES</h1>
+                <img class="astro" src="media/astro.jpg" alt="astro">
+            </section>
+        </article>
+        
+
+        <section class="galeria">
+            <div class="galeriaItem">
+                <img src="media/istockphoto-1295202272-612x612.jpg" alt="immg1" class="img">
+            </div>
+            <div class="galeriaItem">
+                <img src="media/istockphoto-1300438606-612x612.jpg" alt="img2" class="img">
+            </div>
+            <div class="galeriaItem">
+                <img src="media/istockphoto-1303134574-612x612.jpg" alt="img3" class="img">
+            </div>
+            <div class="galeriaItem">
+                <img src="media/istockphoto-1306293607-612x612.jpg" alt="img4" class="img">
+            </div>
+            <div class="galeriaItem">
+                <img src="media/telescope.jpg" alt="img5" class="img">
+            </div>
+            <div class="galeriaItem">
+                <img src="media/2352.jpg" alt="img6" class="img">
+            </div>
+        </section>
+
+        <article class="text wow animate__animated animate__bounceInLeft">
+            <h2>Lorem Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Earum et, minus nobis saepe accusantium cumque possimus iste 
+                eos reprehenderit blanditiis expedita ipsam aspernatur rerum ut, 
+                ad rem animi consequatur sit?</p>
+        </article>
+    </main>
+
+    <!--Script de la librería wow-->
+    <script src="js/wow.min.js"></script> <!--ruta donde está el archivo que descargamos del repositorio dist-> js y buscar el archivo minificado-->
+    <script>
+        new WOW().init();
+    </script>
+    
+</body>
+</html>
